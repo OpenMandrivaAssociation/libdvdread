@@ -5,7 +5,7 @@
 Summary:	Library to read DVD images
 Name:		libdvdread
 Version:	0.9.7
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	GPL
 Group:		System/Libraries
 URL:		http://www.dtek.chalmers.se/groups/dvd/
@@ -30,10 +30,7 @@ libdvdread.
 Summary:	Libdvdread library headers
 Group:		Development/C
 Requires:	%{libname} = %{version}
-%if "%{_lib}" != "lib"
 Provides:       %{name}-devel = %{version}-%{release}
-%endif
-Provides:       %{mklibname dvdread 3 -d} = %{version}
 Obsoletes:      %{mklibname dvdread 3 -d}
 
 %description -n	%{develname}
