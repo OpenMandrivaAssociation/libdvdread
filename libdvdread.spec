@@ -12,7 +12,6 @@ URL:		http://www.dtek.chalmers.se/groups/dvd/
 Source0:	http://www.dtek.chalmers.se/groups/dvd/dist/%{name}-%{version}.tar.bz2
 #gw add UDF.* to list of exported symbols
 Patch0:		libdvdread-automake.patch
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
 libdvdread provides a simple foundation for reading DVD-Video images.
