@@ -5,13 +5,15 @@
 Summary:	Library to read DVD images
 Name:		libdvdread
 Version:	0.9.7
-Release:	%mkrel 5
+Release:	%mkrel 6
 License:	GPL
 Group:		System/Libraries
 URL:		http://www.dtek.chalmers.se/groups/dvd/
 Source0:	http://www.dtek.chalmers.se/groups/dvd/dist/%{name}-%{version}.tar.bz2
 #gw add UDF.* to list of exported symbols
 Patch0:		libdvdread-automake.patch
+#gw: fix for copy protected DVDs with invalid UDF file system (bug #38118)
+Patch1: http://tobias.rautenkranz.ch/code/libdvdread_udf.patch
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
@@ -49,6 +51,7 @@ play_title and title_info.
 
 %setup -q 
 %patch -p1
+%patch1 -p1
 
 %build
 rm missing
