@@ -5,7 +5,7 @@
 Summary:	Library to read DVD images
 Name:		libdvdread
 Version:	0.9.7
-Release:	%mkrel 7
+Release:	%mkrel 8
 License:	GPL
 Group:		System/Libraries
 URL:		http://www.dtek.chalmers.se/groups/dvd/
