@@ -58,7 +58,6 @@ rm -rf %{buildroot}
 
 %makeinstall_std
 mkdir -p %{buildroot}/%{_bindir}
-cp src/.libs/* %{buildroot}/%{_bindir}
 
 %if %mdkversion < 200900
 %post -n %{libname}  -p /sbin/ldconfig
@@ -83,7 +82,5 @@ rm -rf %{buildroot}
 %attr(755,root,root) %{_libdir}/lib*.la
 %_datadir/aclocal/dvdread.m4
 %_libdir/pkgconfig/dvdread.pc
+%_bindir/dvdread-config
 
-%files utils
-%defattr(755,root,root,755)
-%{_bindir}/*
