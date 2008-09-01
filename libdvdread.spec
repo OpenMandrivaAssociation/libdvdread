@@ -83,4 +83,4 @@ rm -rf %{buildroot}
 %_datadir/aclocal/dvdread.m4
 %_libdir/pkgconfig/dvdread.pc
 %_bindir/dvdread-config
-%{_bindir}/*/dvdnav-config
+%{_bindir}/*/dvdread-config
