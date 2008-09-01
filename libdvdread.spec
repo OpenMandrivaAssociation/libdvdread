@@ -6,7 +6,7 @@
 Summary:	Library to read DVD images
 Name:		libdvdread
 Version:	4.1.3
-Release:	%mkrel 0.%svn.3
+Release:	%mkrel 0.%svn.4
 License:	GPLv2+
 Group:		System/Libraries
 URL:		http://www.mplayerhq.hu/
@@ -82,5 +82,5 @@ rm -rf %{buildroot}
 %attr(755,root,root) %{_libdir}/lib*.la
 %_datadir/aclocal/dvdread.m4
 %_libdir/pkgconfig/dvdread.pc
-%_bindir/dvdread-config
-%{_bindir}/*/dvdread-config
+%attr(755,root,root) %_bindir/dvdread-config
+%attr(755,root,root) %{_bindir}/*/dvdread-config
