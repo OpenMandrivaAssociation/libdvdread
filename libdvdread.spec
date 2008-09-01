@@ -1,19 +1,16 @@
-%define major 3
+%define major 4
 %define libname %mklibname dvdread %{major}
 %define develname %mklibname dvdread -d
+%define svn r1132
 
 Summary:	Library to read DVD images
 Name:		libdvdread
-Version:	0.9.7
-Release:	%mkrel 8
-License:	GPL
+Version:	4.1.3
+Release:	%mkrel 0.%svn.1
+License:	GPLv2+
 Group:		System/Libraries
-URL:		http://www.dtek.chalmers.se/groups/dvd/
-Source0:	http://www.dtek.chalmers.se/groups/dvd/dist/%{name}-%{version}.tar.bz2
-#gw add UDF.* to list of exported symbols
-Patch0:		libdvdread-automake.patch
-#gw: fix for copy protected DVDs with invalid UDF file system (bug #38118)
-Patch1: http://tobias.rautenkranz.ch/03-udf.patch
+URL:		http://www.mplayerhq.hu/
+Source0:	%{name}-%{svn}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
@@ -49,21 +46,17 @@ play_title and title_info.
 
 %prep
 
-%setup -q 
-%patch -p1
-%patch1 -p1
+%setup -q -n %name
+./autogen.sh
 
 %build
-rm missing
-libtoolize --copy --force; aclocal; autoconf; automake -a -c
-
 %configure2_5x 
 %make
 
 %install
 rm -rf %{buildroot}
 
-%makeinstall
+%makeinstall_std
 mkdir -p %{buildroot}/%{_bindir}
 cp src/.libs/* %{buildroot}/%{_bindir}
 
@@ -88,7 +81,8 @@ rm -rf %{buildroot}
 %{_includedir}/dvdread
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
-%{_libdir}/*.a
+%_datadir/aclocal/dvdread.m4
+%_libdir/pkgconfig/dvdread.pc
 
 %files utils
 %defattr(755,root,root,755)
