@@ -1,16 +1,15 @@
 %define major 4
 %define libname %mklibname dvdread %{major}
 %define develname %mklibname dvdread -d
-%define svn r1132
 
 Summary:	Library to read DVD images
 Name:		libdvdread
 Version:	4.1.3
-Release:	%mkrel 0.%svn.4
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		System/Libraries
 URL:		http://www.mplayerhq.hu/
-Source0:	%{name}-%{svn}.tar.bz2
+Source0:	http://www.mplayerhq.hu/MPlayer/releases/dvdnav/%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
@@ -46,7 +45,7 @@ play_title and title_info.
 
 %prep
 
-%setup -q -n %name
+%setup -q -n %name-%version
 ./autogen.sh
 
 %build
