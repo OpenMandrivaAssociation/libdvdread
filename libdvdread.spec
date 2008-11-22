@@ -5,11 +5,12 @@
 Summary:	Library to read DVD images
 Name:		libdvdread
 Version:	4.1.3
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 Group:		System/Libraries
 URL:		http://www.mplayerhq.hu/
 Source0:	http://www.mplayerhq.hu/MPlayer/releases/dvdnav/%{name}-%{version}.tar.bz2
+Patch0:     libdvdread-4.1.3-backward-compatibility.patch
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
@@ -46,6 +47,7 @@ play_title and title_info.
 %prep
 
 %setup -q -n %name-%version
+%patch -p 1
 ./autogen.sh
 
 %build
