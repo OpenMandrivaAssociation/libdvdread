@@ -36,18 +36,10 @@ Obsoletes:      %{mklibname dvdread 3 -d}
 This is the libraries, include files and other resources you can use
 to incorporate libdvdread into applications.
 
-%package	utils
-Summary:	Libdvdread utilities
-Group:		Video
-
-%description	utils
-This contains some test utilities based on libdvdread: ifo_dump,
-play_title and title_info.
-
 %prep
 
 %setup -q -n %name-%version
-%patch -p 1
+%patch0 -p 1
 ./autogen.sh
 
 %build
