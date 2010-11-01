@@ -5,12 +5,13 @@
 Summary:	Library to read DVD images
 Name:		libdvdread
 Version:	4.1.3
-Release:	%mkrel 5
+Release:	%mkrel 6
 License:	GPLv2+
 Group:		System/Libraries
 URL:		http://www.mplayerhq.hu/
 Source0:	http://www.mplayerhq.hu/MPlayer/releases/dvdnav/%{name}-%{version}.tar.bz2
 Patch0:     libdvdread-4.1.3-backward-compatibility.patch
+Patch1:	    libdvdread-4.1.3-m4.patch
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
@@ -39,7 +40,7 @@ to incorporate libdvdread into applications.
 %prep
 
 %setup -q -n %name-%version
-%patch0 -p 1
+%apply_patches
 ./autogen.sh
 
 %build
@@ -52,13 +53,6 @@ rm -rf %{buildroot}
 %makeinstall_std
 mkdir -p %{buildroot}/%{_bindir}
 %multiarch_binaries %{buildroot}%{_bindir}/dvdread-config
-%if %mdkversion < 200900
-%post -n %{libname}  -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
 
 %clean
 rm -rf %{buildroot}
