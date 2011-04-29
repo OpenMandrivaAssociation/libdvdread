@@ -5,7 +5,7 @@
 Summary:	Library to read DVD images
 Name:		libdvdread
 Version:	4.1.3
-Release:	%mkrel 6
+Release:	%mkrel 7
 License:	GPLv2+
 Group:		System/Libraries
 URL:		http://www.mplayerhq.hu/
