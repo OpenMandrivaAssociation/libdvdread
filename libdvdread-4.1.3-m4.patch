@@ -1,0 +1,21 @@
+diff -p -up libdvdread-4.1.3/m4/dvdread.m4~ libdvdread-4.1.3/m4/dvdread.m4
+--- libdvdread-4.1.3/m4/dvdread.m4~	2008-06-02 11:27:49.000000000 +0200
++++ libdvdread-4.1.3/m4/dvdread.m4	2010-11-01 10:09:01.000000000 +0100
+@@ -84,7 +84,7 @@ dnl
+       AC_LANG_C()
+       rm -f conf.dvdreadtest
+       AC_TRY_RUN([
+-#include <dvdread.h>
++#include <dvdread/dvd_reader.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -149,7 +149,7 @@ main ()
+           CFLAGS="$CFLAGS $DVDREAD_CFLAGS"
+           LIBS="$LIBS $DVDREAD_LIBS"
+           AC_TRY_LINK([
+-#include <dvdread.h>
++#include <dvdread/dvd_reader.h>
+ #include <stdio.h>
+ ],      [ return 0; ],
+         [ echo "*** The test program compiled, but did not run. This usually means"
