@@ -38,7 +38,8 @@ to incorporate libdvdread into applications.
 %apply_patches
 
 %build
-%configure2_5x
+%configure2_5x 
+
 %make
 
 %install
@@ -56,5 +57,5 @@ to incorporate libdvdread into applications.
 %{_libdir}/pkgconfig/dvdread.pc
 %{_datadir}/aclocal/dvdread.m4
 %{_bindir}/dvdread-config
-%{multiarch_bindir}/dvdread-config
+#{multiarch_bindir}/dvdread-config
 
