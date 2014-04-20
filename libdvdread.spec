@@ -45,7 +45,7 @@ to incorporate libdvdread into applications.
 %install
 %makeinstall_std
 #gw remove buildroot
-sed -i -e "s^%{buildroot}^^" %{buildroot}%{_bindir}/dvdnav-config
+sed -i -e "s^%{buildroot}^^" %{buildroot}%{_bindir}/dvdread-config
 
 %multiarch_binaries %{buildroot}%{_bindir}/dvdread-config
 
