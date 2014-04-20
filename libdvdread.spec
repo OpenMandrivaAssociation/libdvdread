@@ -36,7 +36,6 @@ to incorporate libdvdread into applications.
 %prep
 %setup -q
 %apply_patches
-./autogen.sh
 
 %build
 %configure2_5x
