@@ -55,7 +55,7 @@ to incorporate libdvdread into applications.
 %{_includedir}/dvdread
 %{_libdir}/lib*.so
 %{_libdir}/pkgconfig/dvdread.pc
-%{_datadir}/aclocal/dvdread.m4
-%{_bindir}/dvdread-config
+#{_datadir}/aclocal/dvdread.m4
+#{_bindir}/dvdread-config
 #{multiarch_bindir}/dvdread-config
 
