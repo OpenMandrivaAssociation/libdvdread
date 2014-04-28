@@ -44,10 +44,6 @@ to incorporate libdvdread into applications.
 
 %install
 %makeinstall_std
-#gw remove buildroot
-sed -i -e "s^%{buildroot}^^" %{buildroot}%{_bindir}/dvdread-config
-
-%multiarch_binaries %{buildroot}%{_bindir}/dvdread-config
 
 %files -n %{libname}
 %{_libdir}/libdvdread.so.%{major}*
@@ -56,8 +52,6 @@ sed -i -e "s^%{buildroot}^^" %{buildroot}%{_bindir}/dvdread-config
 %doc README AUTHORS TODO
 %{_includedir}/dvdread
 %{_libdir}/lib*.so
+%{_libdir}/lib*.a
 %{_libdir}/pkgconfig/dvdread.pc
-#{_datadir}/aclocal/dvdread.m4
-%{_bindir}/dvdread-config
-%{multiarch_bindir}/dvdread-config
-
+%{_docdir}/libdvdread
