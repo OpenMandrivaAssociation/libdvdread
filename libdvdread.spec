@@ -4,13 +4,12 @@
 
 Summary:	Library to read DVD images
 Name:		libdvdread
-Version:	4.2.0
-Release:	7
+Version:	4.9.9
+Release:	1
 License:	GPLv2+
 Group:		System/Libraries
 Url:		http://www.mplayerhq.hu/
-Source0:	http://dvdnav.mplayerhq.hu/releases/%{name}-%{version}.tar.bz2
-Patch1:		libdvdread-4.1.3-m4.patch
+Source0:	http://dvdnav.mplayerhq.hu/releases/%{name}-%{version}.tar.xz
 
 %description
 libdvdread provides a simple foundation for reading DVD-Video images.
@@ -37,14 +36,16 @@ to incorporate libdvdread into applications.
 %prep
 %setup -q
 %apply_patches
-./autogen.sh
 
 %build
-%configure2_5x
+%configure2_5x 
+
 %make
 
 %install
 %makeinstall_std
+#gw remove buildroot
+sed -i -e "s^%{buildroot}^^" %{buildroot}%{_bindir}/dvdread-config
 
 %multiarch_binaries %{buildroot}%{_bindir}/dvdread-config
 
@@ -56,7 +57,7 @@ to incorporate libdvdread into applications.
 %{_includedir}/dvdread
 %{_libdir}/lib*.so
 %{_libdir}/pkgconfig/dvdread.pc
-%{_datadir}/aclocal/dvdread.m4
+#{_datadir}/aclocal/dvdread.m4
 %{_bindir}/dvdread-config
 %{multiarch_bindir}/dvdread-config
 
