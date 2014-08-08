@@ -38,7 +38,7 @@ to incorporate libdvdread into applications.
 %apply_patches
 
 %build
-%configure2_5x 
+%configure
 
 %make
 
@@ -52,6 +52,5 @@ to incorporate libdvdread into applications.
 %doc README AUTHORS TODO
 %{_includedir}/dvdread
 %{_libdir}/lib*.so
-%{_libdir}/lib*.a
 %{_libdir}/pkgconfig/dvdread.pc
 %{_docdir}/libdvdread
