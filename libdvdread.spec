@@ -9,7 +9,7 @@ Release:	1
 License:	GPLv2+
 Group:		System/Libraries
 Url:		http://www.mplayerhq.hu/
-Source0:	http://dvdnav.mplayerhq.hu/releases/%{name}-%{version}.tar.bz2
+Source0:	http://download.videolan.org/pub/videolan/libdvdread/%{version}/%{name}-%{version}.tar.bz2
 
 %description
 libdvdread provides a simple foundation for reading DVD-Video images.
