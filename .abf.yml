@@ -3,4 +3,4 @@ removed_sources:
   libdvdread-4.9.9.tar.bz2: aeb4adbc647e8ba0a903b7d0c149bdfc2360582e
   libdvdread-4.9.9.tar.xz: 5536084fc7cd9a5d9fff9f91bfe7bf3e4cf3700e
 sources:
-  libdvdread-6.0.0.tar.bz2: 5a01d1e6196a6ceff363455951e3682b231a3b78
+  libdvdread-6.0.1.tar.bz2: 41ec4bebaa647896a30c6dcd45a42430b35606f0
