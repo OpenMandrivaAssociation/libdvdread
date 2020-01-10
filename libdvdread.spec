@@ -35,7 +35,7 @@ to incorporate libdvdread into applications.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 %configure
