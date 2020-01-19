@@ -1,10 +1,10 @@
-%define major	4
+%define major	7
 %define libname	%mklibname dvdread %{major}
 %define devname	%mklibname dvdread -d
 
 Summary:	Library to read DVD images
 Name:		libdvdread
-Version:	6.0.1
+Version:	6.0.2
 Release:	1
 License:	GPLv2+
 Group:		System/Libraries
@@ -39,11 +39,10 @@ to incorporate libdvdread into applications.
 
 %build
 %configure
-
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libname}
 %{_libdir}/libdvdread.so.%{major}*
