@@ -4,7 +4,7 @@
 
 Summary:	Library to read DVD images
 Name:		libdvdread
-Version:	6.0.2
+Version:	6.1.0
 Release:	1
 License:	GPLv2+
 Group:		System/Libraries
