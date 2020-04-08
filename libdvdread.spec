@@ -1,4 +1,4 @@
-%define major	7
+%define major	8
 %define libname	%mklibname dvdread %{major}
 %define devname	%mklibname dvdread -d
 
