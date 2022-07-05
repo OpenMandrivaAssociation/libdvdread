@@ -48,7 +48,7 @@ to incorporate libdvdread into applications.
 %{_libdir}/libdvdread.so.%{major}*
 
 %files -n %{devname}
-%doc README AUTHORS TODO
+%doc README* AUTHORS TODO
 %{_includedir}/dvdread
 %{_libdir}/lib*.so
 %{_libdir}/pkgconfig/dvdread.pc
