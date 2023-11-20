@@ -1,11 +1,12 @@
 %define major	8
-%define libname	%mklibname dvdread %{major}
+%define oldlibname	%mklibname dvdread 8
+%define libname	%mklibname dvdread
 %define devname	%mklibname dvdread -d
 
 Summary:	Library to read DVD images
 Name:		libdvdread
 Version:	6.1.3
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		System/Libraries
 Url:		http://www.mplayerhq.hu/
@@ -17,6 +18,7 @@ libdvdread provides a simple foundation for reading DVD-Video images.
 %package -n	%{libname}
 Summary:	Library to read DVD images
 Group:		System/Libraries
+%rename %{oldlibname}
 
 %description -n	%{libname}
 Libdvdread provides a simple foundation for reading DVD-Video images.
@@ -34,11 +36,13 @@ This is the libraries, include files and other resources you can use
 to incorporate libdvdread into applications.
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
+%configure
+# ****ing libtool strips out -mllvm options passed to the linker,
+# so we have to try harder to convince it
+sed -i -e 's|-shared \\|-shared -Wl,-mllvm,-instcombine-infinite-loop-threshold=1000 \\|g' libtool
 
 %build
-%configure
 %make_build
 
 %install
