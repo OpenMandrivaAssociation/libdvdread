@@ -9,7 +9,7 @@ Version:	6.1.3
 Release:	3
 License:	GPLv2+
 Group:		System/Libraries
-Url:		http://www.mplayerhq.hu/
+Url:		https://www.mplayerhq.hu/
 Source0:	http://download.videolan.org/pub/videolan/libdvdread/%{version}/%{name}-%{version}.tar.bz2
 
 %description
