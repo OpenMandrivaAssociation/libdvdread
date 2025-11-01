@@ -5,12 +5,14 @@
 
 Summary:	Library to read DVD images
 Name:		libdvdread
-Version:	6.1.3
-Release:	3
+Version:	7.0.0
+Release:	1
 License:	GPLv2+
 Group:		System/Libraries
 Url:		https://www.mplayerhq.hu/
-Source0:	http://download.videolan.org/pub/videolan/libdvdread/%{version}/%{name}-%{version}.tar.bz2
+#Source0:	http://download.videolan.org/pub/videolan/libdvdread/%{version}/%{name}-%{version}.tar.bz2
+Source0:  https://code.videolan.org/videolan/libdvdread/-/archive/%{version}/libdvdread-%{version}.tar.bz2
+BuildRequires: meson
 
 %description
 libdvdread provides a simple foundation for reading DVD-Video images.
@@ -37,16 +39,13 @@ to incorporate libdvdread into applications.
 
 %prep
 %autosetup -p1
-%configure
-# ****ing libtool strips out -mllvm options passed to the linker,
-# so we have to try harder to convince it
-sed -i -e 's|-shared \\|-shared -Wl,-mllvm,-instcombine-infinite-loop-threshold=1000 \\|g' libtool
+%meson
 
 %build
-%make_build
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 %files -n %{libname}
 %{_libdir}/libdvdread.so.%{major}*
