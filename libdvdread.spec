@@ -48,6 +48,9 @@ to incorporate libdvdread into applications.
 %install
 %meson_install
 
+# remove not wanted
+rm -f %{buildroot}/%{_libdir}/libdvdread.a
+
 %files -n %{libname}
 %{_libdir}/libdvdread.so.%{major}*
 
