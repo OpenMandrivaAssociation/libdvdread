@@ -39,7 +39,8 @@ to incorporate libdvdread into applications.
 
 %prep
 %autosetup -p1
-%meson
+#disable dvdcss because it comes from restricted repo
+%meson -Dlibdvdcss=disabled
 
 %build
 %meson_build
